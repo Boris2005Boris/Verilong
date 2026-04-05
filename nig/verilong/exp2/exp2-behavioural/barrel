@@ -1,0 +1,184 @@
+#! /usr/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+S_0x56206b9c53d0 .scope module, "testbench" "testbench" 2 3;
+ .timescale -9 -12;
+v0x56206b9e6cd0_0 .var/i "c", 31 0;
+v0x56206b9e6dd0_0 .var "control", 0 0;
+v0x56206b9e6e90_0 .var "data_in", 7 0;
+v0x56206b9e6f30_0 .net "data_out", 7 0, L_0x56206b9e8c70;  1 drivers
+v0x56206b9e6fd0_0 .var/i "i", 31 0;
+v0x56206b9e7070_0 .var/i "p", 31 0;
+v0x56206b9e7130 .array "patterns", 2 0, 7 0;
+v0x56206b9e71f0_0 .var "select", 2 0;
+S_0x56206b9c5560 .scope module, "uut" "barrel_shifter" 2 11, 3 1 0, S_0x56206b9c53d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "data_in";
+    .port_info 1 /INPUT 3 "select";
+    .port_info 2 /INPUT 1 "control";
+    .port_info 3 /OUTPUT 8 "data_out";
+v0x56206b9b96b0_0 .net *"_ivl_1", 0 0, L_0x56206b9e72b0;  1 drivers
+L_0x7f0b2da19018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x56206b9e5250_0 .net/2u *"_ivl_10", 0 0, L_0x7f0b2da19018;  1 drivers
+v0x56206b9e5330_0 .net *"_ivl_12", 7 0, L_0x56206b9e7770;  1 drivers
+v0x56206b9e53f0_0 .net *"_ivl_14", 7 0, L_0x56206b9e78d0;  1 drivers
+v0x56206b9e54d0_0 .net *"_ivl_19", 0 0, L_0x56206b9e7bf0;  1 drivers
+v0x56206b9e5600_0 .net *"_ivl_21", 5 0, L_0x56206b9e7c90;  1 drivers
+v0x56206b9e56e0_0 .net *"_ivl_23", 1 0, L_0x56206b9e7de0;  1 drivers
+v0x56206b9e57c0_0 .net *"_ivl_24", 7 0, L_0x56206b9e7e80;  1 drivers
+v0x56206b9e58a0_0 .net *"_ivl_27", 5 0, L_0x56206b9e7fe0;  1 drivers
+L_0x7f0b2da19060 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x56206b9e5a10_0 .net/2u *"_ivl_28", 1 0, L_0x7f0b2da19060;  1 drivers
+v0x56206b9e5af0_0 .net *"_ivl_3", 6 0, L_0x56206b9e73a0;  1 drivers
+v0x56206b9e5bd0_0 .net *"_ivl_30", 7 0, L_0x56206b9e8110;  1 drivers
+v0x56206b9e5cb0_0 .net *"_ivl_32", 7 0, L_0x56206b9e8230;  1 drivers
+v0x56206b9e5d90_0 .net *"_ivl_37", 0 0, L_0x56206b9e84a0;  1 drivers
+v0x56206b9e5e70_0 .net *"_ivl_39", 3 0, L_0x56206b9e85d0;  1 drivers
+v0x56206b9e5f50_0 .net *"_ivl_41", 3 0, L_0x56206b9e8710;  1 drivers
+v0x56206b9e6030_0 .net *"_ivl_42", 7 0, L_0x56206b9e87b0;  1 drivers
+v0x56206b9e6110_0 .net *"_ivl_45", 3 0, L_0x56206b9e8670;  1 drivers
+L_0x7f0b2da190a8 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0x56206b9e61f0_0 .net/2u *"_ivl_46", 3 0, L_0x7f0b2da190a8;  1 drivers
+v0x56206b9e62d0_0 .net *"_ivl_48", 7 0, L_0x56206b9e89e0;  1 drivers
+v0x56206b9e63b0_0 .net *"_ivl_5", 0 0, L_0x56206b9e7490;  1 drivers
+v0x56206b9e6490_0 .net *"_ivl_50", 7 0, L_0x56206b9e88a0;  1 drivers
+v0x56206b9e6570_0 .net *"_ivl_6", 7 0, L_0x56206b9e7530;  1 drivers
+v0x56206b9e6650_0 .net *"_ivl_9", 6 0, L_0x56206b9e76d0;  1 drivers
+v0x56206b9e6730_0 .net "control", 0 0, v0x56206b9e6dd0_0;  1 drivers
+v0x56206b9e67f0_0 .net "data_in", 7 0, v0x56206b9e6e90_0;  1 drivers
+v0x56206b9e68d0_0 .net "data_out", 7 0, L_0x56206b9e8c70;  alias, 1 drivers
+v0x56206b9e69b0_0 .net "select", 2 0, v0x56206b9e71f0_0;  1 drivers
+v0x56206b9e6a90_0 .net "stage0", 7 0, L_0x56206b9e7a60;  1 drivers
+v0x56206b9e6b70_0 .net "stage1", 7 0, L_0x56206b9e8320;  1 drivers
+L_0x56206b9e72b0 .part v0x56206b9e71f0_0, 0, 1;
+L_0x56206b9e73a0 .part v0x56206b9e6e90_0, 0, 7;
+L_0x56206b9e7490 .part v0x56206b9e6e90_0, 7, 1;
+L_0x56206b9e7530 .concat [ 1 7 0 0], L_0x56206b9e7490, L_0x56206b9e73a0;
+L_0x56206b9e76d0 .part v0x56206b9e6e90_0, 0, 7;
+L_0x56206b9e7770 .concat [ 1 7 0 0], L_0x7f0b2da19018, L_0x56206b9e76d0;
+L_0x56206b9e78d0 .functor MUXZ 8, L_0x56206b9e7770, L_0x56206b9e7530, v0x56206b9e6dd0_0, C4<>;
+L_0x56206b9e7a60 .functor MUXZ 8, v0x56206b9e6e90_0, L_0x56206b9e78d0, L_0x56206b9e72b0, C4<>;
+L_0x56206b9e7bf0 .part v0x56206b9e71f0_0, 1, 1;
+L_0x56206b9e7c90 .part L_0x56206b9e7a60, 0, 6;
+L_0x56206b9e7de0 .part L_0x56206b9e7a60, 6, 2;
+L_0x56206b9e7e80 .concat [ 2 6 0 0], L_0x56206b9e7de0, L_0x56206b9e7c90;
+L_0x56206b9e7fe0 .part L_0x56206b9e7a60, 0, 6;
+L_0x56206b9e8110 .concat [ 2 6 0 0], L_0x7f0b2da19060, L_0x56206b9e7fe0;
+L_0x56206b9e8230 .functor MUXZ 8, L_0x56206b9e8110, L_0x56206b9e7e80, v0x56206b9e6dd0_0, C4<>;
+L_0x56206b9e8320 .functor MUXZ 8, L_0x56206b9e7a60, L_0x56206b9e8230, L_0x56206b9e7bf0, C4<>;
+L_0x56206b9e84a0 .part v0x56206b9e71f0_0, 2, 1;
+L_0x56206b9e85d0 .part L_0x56206b9e8320, 0, 4;
+L_0x56206b9e8710 .part L_0x56206b9e8320, 4, 4;
+L_0x56206b9e87b0 .concat [ 4 4 0 0], L_0x56206b9e8710, L_0x56206b9e85d0;
+L_0x56206b9e8670 .part L_0x56206b9e8320, 0, 4;
+L_0x56206b9e89e0 .concat [ 4 4 0 0], L_0x7f0b2da190a8, L_0x56206b9e8670;
+L_0x56206b9e88a0 .functor MUXZ 8, L_0x56206b9e89e0, L_0x56206b9e87b0, v0x56206b9e6dd0_0, C4<>;
+L_0x56206b9e8c70 .functor MUXZ 8, L_0x56206b9e8320, L_0x56206b9e88a0, L_0x56206b9e84a0, C4<>;
+    .scope S_0x56206b9c53d0;
+T_0 ;
+    %vpi_call 2 22 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 23 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x56206b9c53d0 {0 0 0};
+    %pushi/vec4 172, 0, 8;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x56206b9e7130, 4, 0;
+    %pushi/vec4 128, 0, 8;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x56206b9e7130, 4, 0;
+    %pushi/vec4 85, 0, 8;
+    %ix/load 4, 2, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x56206b9e7130, 4, 0;
+    %vpi_call 2 30 "$display", "Time\011Ctrl\011Sel\011Input\011\011Output" {0 0 0};
+    %vpi_call 2 31 "$monitor", "%t\011%b\011%d\011%b\011%b", $time, v0x56206b9e6dd0_0, v0x56206b9e71f0_0, v0x56206b9e6e90_0, v0x56206b9e6f30_0 {0 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x56206b9e7070_0, 0, 32;
+T_0.0 ; Top of for-loop
+    %load/vec4 v0x56206b9e7070_0;
+    %cmpi/s 3, 0, 32;
+	  %jmp/0xz T_0.1, 5;
+    %ix/getv/s 4, v0x56206b9e7070_0;
+    %load/vec4a v0x56206b9e7130, 4;
+    %store/vec4 v0x56206b9e6e90_0, 0, 8;
+    %vpi_call 2 35 "$display", "\012=== Testing Data Pattern: %b ===", v0x56206b9e6e90_0 {0 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x56206b9e6cd0_0, 0, 32;
+T_0.3 ; Top of for-loop
+    %load/vec4 v0x56206b9e6cd0_0;
+    %cmpi/s 2, 0, 32;
+	  %jmp/0xz T_0.4, 5;
+    %load/vec4 v0x56206b9e6cd0_0;
+    %pad/s 1;
+    %store/vec4 v0x56206b9e6dd0_0, 0, 1;
+    %load/vec4 v0x56206b9e6dd0_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_0.6, 8;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 82, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1869898100, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1696615525, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 26228, 0, 16; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_0.7, 8;
+T_0.6 ; End of true expr.
+    %pushi/vec4 1282369385, 0, 32; draw_string_vec4
+    %pushi/vec4 1667329056, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1399351654, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1948273765, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 26228, 0, 16; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/0 T_0.7, 8;
+ ; End of false expr.
+    %blend;
+T_0.7;
+    %vpi_call 2 39 "$display", "--- Mode: %s ---", S<0,vec4,u144> {1 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x56206b9e6fd0_0, 0, 32;
+T_0.8 ; Top of for-loop
+    %load/vec4 v0x56206b9e6fd0_0;
+    %cmpi/s 8, 0, 32;
+	  %jmp/0xz T_0.9, 5;
+    %load/vec4 v0x56206b9e6fd0_0;
+    %pad/s 3;
+    %store/vec4 v0x56206b9e71f0_0, 0, 3;
+    %delay 10000, 0;
+T_0.10 ; for-loop step statement
+    %load/vec4 v0x56206b9e6fd0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x56206b9e6fd0_0, 0, 32;
+    %jmp T_0.8;
+T_0.9 ; for-loop exit label
+T_0.5 ; for-loop step statement
+    %load/vec4 v0x56206b9e6cd0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x56206b9e6cd0_0, 0, 32;
+    %jmp T_0.3;
+T_0.4 ; for-loop exit label
+T_0.2 ; for-loop step statement
+    %load/vec4 v0x56206b9e7070_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x56206b9e7070_0, 0, 32;
+    %jmp T_0.0;
+T_0.1 ; for-loop exit label
+    %vpi_call 2 46 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "barrel_shifter.v";

@@ -1,0 +1,96 @@
+#! /usr/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+S_0x558e2a0971c0 .scope module, "testbench" "testbench" 2 3;
+ .timescale -9 -12;
+v0x558e2a0af070_0 .var "A", 3 0;
+v0x558e2a0af150_0 .var "B", 3 0;
+v0x558e2a0af220_0 .var "Cin", 0 0;
+v0x558e2a0af320_0 .net "Cout", 0 0, L_0x558e2a0af490;  1 drivers
+v0x558e2a0af3f0_0 .net "Sum", 3 0, L_0x558e2a0af580;  1 drivers
+S_0x558e2a097350 .scope module, "uut" "adder_4bit" 2 9, 3 1 0, S_0x558e2a0971c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 4 "Sum";
+    .port_info 4 /OUTPUT 1 "Cout";
+v0x558e2a088ac0_0 .net "A", 3 0, v0x558e2a0af070_0;  1 drivers
+v0x558e2a0ae560_0 .net "B", 3 0, v0x558e2a0af150_0;  1 drivers
+v0x558e2a0ae640_0 .net "Cin", 0 0, v0x558e2a0af220_0;  1 drivers
+v0x558e2a0ae6e0_0 .net "Cout", 0 0, L_0x558e2a0af490;  alias, 1 drivers
+v0x558e2a0ae7a0_0 .net "Sum", 3 0, L_0x558e2a0af580;  alias, 1 drivers
+L_0x7f3606446060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x558e2a0ae8d0_0 .net *"_ivl_10", 0 0, L_0x7f3606446060;  1 drivers
+v0x558e2a0ae9b0_0 .net *"_ivl_11", 4 0, L_0x558e2a0af970;  1 drivers
+v0x558e2a0aea90_0 .net *"_ivl_13", 4 0, L_0x558e2a0afab0;  1 drivers
+L_0x7f36064460a8 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0x558e2a0aeb70_0 .net *"_ivl_16", 3 0, L_0x7f36064460a8;  1 drivers
+v0x558e2a0aec50_0 .net *"_ivl_17", 4 0, L_0x558e2a0afc30;  1 drivers
+v0x558e2a0aed30_0 .net *"_ivl_3", 4 0, L_0x558e2a0af6c0;  1 drivers
+L_0x7f3606446018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x558e2a0aee10_0 .net *"_ivl_6", 0 0, L_0x7f3606446018;  1 drivers
+v0x558e2a0aeef0_0 .net *"_ivl_7", 4 0, L_0x558e2a0af800;  1 drivers
+L_0x558e2a0af490 .part L_0x558e2a0afc30, 4, 1;
+L_0x558e2a0af580 .part L_0x558e2a0afc30, 0, 4;
+L_0x558e2a0af6c0 .concat [ 4 1 0 0], v0x558e2a0af070_0, L_0x7f3606446018;
+L_0x558e2a0af800 .concat [ 4 1 0 0], v0x558e2a0af150_0, L_0x7f3606446060;
+L_0x558e2a0af970 .arith/sum 5, L_0x558e2a0af6c0, L_0x558e2a0af800;
+L_0x558e2a0afab0 .concat [ 1 4 0 0], v0x558e2a0af220_0, L_0x7f36064460a8;
+L_0x558e2a0afc30 .arith/sum 5, L_0x558e2a0af970, L_0x558e2a0afab0;
+    .scope S_0x558e2a0971c0;
+T_0 ;
+    %vpi_call 2 18 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x558e2a0971c0 {0 0 0};
+    %vpi_call 2 21 "$display", "Time\011A\011B\011Cin\011Sum\011Cout" {0 0 0};
+    %vpi_call 2 22 "$monitor", "%t\011%b\011%b\011%b\011%b\011%b", $time, v0x558e2a0af070_0, v0x558e2a0af150_0, v0x558e2a0af220_0, v0x558e2a0af3f0_0, v0x558e2a0af320_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x558e2a0af070_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x558e2a0af150_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x558e2a0af220_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x558e2a0af070_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x558e2a0af150_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x558e2a0af220_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v0x558e2a0af070_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x558e2a0af150_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x558e2a0af220_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x558e2a0af070_0, 0, 4;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x558e2a0af150_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x558e2a0af220_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x558e2a0af070_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x558e2a0af150_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x558e2a0af220_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 30 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "adder_4bit.v";

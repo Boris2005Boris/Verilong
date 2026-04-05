@@ -1,0 +1,32 @@
+$date
+	Mon Mar 30 15:53:05 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module clock_gen_tb $end
+$var reg 1 ! clk $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0!
+$end
+#45000
+1!
+#60000
+0!
+#105000
+1!
+#120000
+0!
+#165000
+1!
+#180000
+0!

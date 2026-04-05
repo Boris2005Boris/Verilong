@@ -1,0 +1,144 @@
+#! /usr/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+S_0x55661b7c8050 .scope module, "testbench" "testbench" 2 3;
+ .timescale -9 -12;
+v0x55661b7e1c40_0 .var "clk", 0 0;
+v0x55661b7e1d00_0 .var/i "i", 31 0;
+v0x55661b7e1dc0_0 .net "is_divisible", 0 0, L_0x55661b7f2460;  1 drivers
+v0x55661b7e1e60_0 .var "reset", 0 0;
+v0x55661b7e1f30_0 .var "serial_in", 0 0;
+v0x55661b7e1fd0_0 .net "shift_reg", 7 0, v0x55661b7e1ac0_0;  1 drivers
+v0x55661b7e20a0_0 .var "test_sequence", 15 0;
+S_0x55661b7c81e0 .scope module, "uut" "divisible_by_3" 2 10, 3 1 0, S_0x55661b7c8050;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "serial_in";
+    .port_info 3 /OUTPUT 8 "shift_reg";
+    .port_info 4 /OUTPUT 1 "is_divisible";
+v0x55661b7b95b0_0 .net *"_ivl_0", 31 0, L_0x55661b7e2140;  1 drivers
+L_0x7f8946795018 .functor BUFT 1, C4<000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55661b7e1410_0 .net *"_ivl_3", 23 0, L_0x7f8946795018;  1 drivers
+L_0x7f8946795060 .functor BUFT 1, C4<00000000000000000000000000000011>, C4<0>, C4<0>, C4<0>;
+v0x55661b7e14f0_0 .net/2u *"_ivl_4", 31 0, L_0x7f8946795060;  1 drivers
+v0x55661b7e15b0_0 .net *"_ivl_6", 31 0, L_0x55661b7f22f0;  1 drivers
+L_0x7f89467950a8 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55661b7e1690_0 .net/2u *"_ivl_8", 31 0, L_0x7f89467950a8;  1 drivers
+v0x55661b7e17c0_0 .net "clk", 0 0, v0x55661b7e1c40_0;  1 drivers
+v0x55661b7e1880_0 .net "is_divisible", 0 0, L_0x55661b7f2460;  alias, 1 drivers
+v0x55661b7e1940_0 .net "reset", 0 0, v0x55661b7e1e60_0;  1 drivers
+v0x55661b7e1a00_0 .net "serial_in", 0 0, v0x55661b7e1f30_0;  1 drivers
+v0x55661b7e1ac0_0 .var "shift_reg", 7 0;
+E_0x55661b7c8aa0 .event posedge, v0x55661b7e1940_0, v0x55661b7e17c0_0;
+L_0x55661b7e2140 .concat [ 8 24 0 0], v0x55661b7e1ac0_0, L_0x7f8946795018;
+L_0x55661b7f22f0 .arith/mod 32, L_0x55661b7e2140, L_0x7f8946795060;
+L_0x55661b7f2460 .cmp/eq 32, L_0x55661b7f22f0, L_0x7f89467950a8;
+    .scope S_0x55661b7c81e0;
+T_0 ;
+    %wait E_0x55661b7c8aa0;
+    %load/vec4 v0x55661b7e1940_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v0x55661b7e1ac0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x55661b7e1ac0_0;
+    %parti/s 7, 0, 2;
+    %load/vec4 v0x55661b7e1a00_0;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0x55661b7e1ac0_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x55661b7c8050;
+T_1 ;
+    %pushi/vec4 55897, 0, 16;
+    %store/vec4 v0x55661b7e20a0_0, 0, 16;
+    %end;
+    .thread T_1;
+    .scope S_0x55661b7c8050;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1c40_0, 0, 1;
+    %end;
+    .thread T_2;
+    .scope S_0x55661b7c8050;
+T_3 ;
+    %delay 5000, 0;
+    %load/vec4 v0x55661b7e1c40_0;
+    %inv;
+    %store/vec4 v0x55661b7e1c40_0, 0, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x55661b7c8050;
+T_4 ;
+    %vpi_call 2 26 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 27 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55661b7c8050 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55661b7e1e60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1e60_0, 0, 1;
+    %vpi_call 2 32 "$display", "Time\011Bit\011Shift Reg\011Decimal\011Divisible by 3?" {0 0 0};
+    %vpi_call 2 33 "$monitor", "%t\011%b\011%b\011%d\011%b", $time, v0x55661b7e1f30_0, v0x55661b7e1fd0_0, v0x55661b7e1fd0_0, v0x55661b7e1dc0_0 {0 0 0};
+    %pushi/vec4 15, 0, 32;
+    %store/vec4 v0x55661b7e1d00_0, 0, 32;
+T_4.0 ; Top of for-loop
+    %load/vec4 v0x55661b7e1d00_0;
+    %cmpi/s 0, 0, 32;
+    %flag_inv 5; GE is !LT
+	  %jmp/0xz T_4.1, 5;
+    %load/vec4 v0x55661b7e20a0_0;
+    %load/vec4 v0x55661b7e1d00_0;
+    %part/s 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+T_4.2 ; for-loop step statement
+    %load/vec4 v0x55661b7e1d00_0;
+    %subi 1, 0, 32;
+    %store/vec4 v0x55661b7e1d00_0, 0, 32;
+    %jmp T_4.0;
+T_4.1 ; for-loop exit label
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55661b7e1f30_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 51 "$finish" {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "divisible_by_3.v";
